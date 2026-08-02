@@ -32,9 +32,9 @@ We set up our booth at craft fairs and festivals all around the Lowcountry, incl
 - **Italian Festival** — downtown Summerville
 - Plus local markets and other pop-ups around town
 
-Check the [calendar](/calendar/) for exact dates, or follow us on
+Check the [calendar](/calendar/) for exact dates, follow us on
 [Facebook](https://www.facebook.com/CareyHarwoods),
 [Instagram](https://www.instagram.com/careyharwoods/), and
-[TikTok](https://www.tiktok.com/@carey.harwoods6) for the latest.
+[TikTok](https://www.tiktok.com/@carey.harwoods6) for the latest, or send us an <script>document.write('<a href="mailto:'+'c'+'h'+'r'+'i'+'s'+'t'+'y'+'@'+'c'+'a'+'r'+'e'+'y'+'h'+'a'+'r'+'w'+'o'+'o'+'d'+'s'+'.'+'c'+'o'+'m'+'">E-mail</a>');</script>.
 
 > Shop Small. Shop Local. 🐝
