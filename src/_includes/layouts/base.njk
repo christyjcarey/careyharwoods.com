@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} · {{ site.shortName }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo-180.png">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.shortName }} — News &amp; Events" href="/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/logo-800.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="{{ site.name }} — home">
+        <img class="brand-logo" src="/assets/img/logo-180.png" alt="" width="44" height="44">
+        <span class="brand-text">
+          <span class="brand-name">Carey Harwoods</span>
+          <span class="brand-tag">Fiber · Laser · 3D Printing</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          {% for item in site.nav %}
+          <li><a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/img/logo-180.png" alt="" width="72" height="72" loading="lazy">
+        <p class="footer-motto">Shop Small <span class="hex-dot" aria-hidden="true"></span> Shop Local</p>
+        <p class="footer-loc">Handmade in {{ site.location }} since {{ site.established }}</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h2 class="footer-heading">Explore</h2>
+        <ul>
+          {% for item in site.nav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <h2 class="footer-heading">Follow the Buzz</h2>
+        <ul>
+          <li><a href="{{ site.social.facebook }}" rel="noopener">Facebook</a></li>
+          <li><a href="{{ site.social.instagram }}" rel="noopener">Instagram</a></li>
+          <li><a href="{{ site.social.tiktok }}" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© {% year %} {{ site.name }}. Made with care (and a little honey) in Summerville, SC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.querySelector(".nav-toggle");
+      var menu = document.getElementById("nav-menu");
+      if (btn && menu) {
+        btn.addEventListener("click", function () {
+          var open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!open));
+          menu.classList.toggle("is-open", !open);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

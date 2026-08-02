@@ -1,0 +1,22 @@
+{
+  "name": "Carey Harwoods, LLC",
+  "shortName": "Carey Harwoods",
+  "tagline": "Fiber, Laser, and 3D Printing",
+  "description": "Carey Harwoods, LLC is a small family-owned craft business in Summerville, SC — 3D printing, laser work, fiber arts, and local honey. Shop Small. Shop Local.",
+  "url": "https://www.careyharwoods.com",
+  "location": "Summerville, South Carolina",
+  "established": "2019",
+  "author": "Christy Carey",
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Blog", "url": "/blog/" },
+    { "label": "Calendar", "url": "/calendar/" },
+    { "label": "About Us", "url": "/about/" },
+    { "label": "Patreon Creators", "url": "/patreon/" }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/CareyHarwoods",
+    "instagram": "https://www.instagram.com/careyharwoods/",
+    "tiktok": "https://www.tiktok.com/@carey.harwoods6"
+  }
+}

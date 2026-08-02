@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: Calendar
+description: Upcoming markets, festivals, and events where you can find Carey Harwoods, LLC around Summerville and the Lowcountry.
+---
+<div class="page-hero">
+  <div class="container">
+    <h1 class="page-title">Event Calendar</h1>
+    <p class="page-subtitle">
+      Markets and festivals where you can find our booth — Summerville Third Thursday,
+      the Flowertown Festival, the Sweet Tea Festival, and more around the Lowcountry.
+    </p>
+  </div>
+</div>
+
+<div class="container section-pad">
+
+  <div class="cal-wrap" data-calendar hidden>
+    <div class="cal-head">
+      <button class="cal-nav-btn" type="button" data-cal-prev aria-label="Previous month">&larr;</button>
+      <h2 class="cal-title" data-cal-title aria-live="polite">Month</h2>
+      <button class="cal-nav-btn" type="button" data-cal-next aria-label="Next month">&rarr;</button>
+    </div>
+    <div class="cal-grid" data-cal-grid></div>
+  </div>
+
+  <div class="section-head">
+    <h2 class="section-title">Upcoming events</h2>
+  </div>
+  <ul class="event-list" data-cal-upcoming>
+    {% for event in collections.events %}
+    <li class="event-card" data-date="{{ event.data.endDate | default(event.date) | isoDate }}">
+      <div class="event-date" aria-hidden="true">
+        <span class="event-month">{{ event.date | monthAbbr }}</span>
+        <span class="event-day">{{ event.date | dayOfMonth }}</span>
+      </div>
+      <div class="event-body">
+        <h3>{{ event.data.title }}{% if event.data.status == "tentative" %}<span class="event-chip tentative">Date TBC</span>{% else %}<span class="event-chip confirmed">Confirmed</span>{% endif %}</h3>
+        <p class="event-meta">
+          <time datetime="{{ event.date | isoDate }}">{{ event.date | shortDate }}</time>{% if event.data.endDate %}&ndash;<time datetime="{{ event.data.endDate | isoDate }}">{{ event.data.endDate | shortDate }}</time>{% endif %}{% if event.data.time %} · {{ event.data.time }}{% endif %}{% if event.data.location %} · {{ event.data.location }}{% endif %}
+        </p>
+        {% if event.templateContent %}<div class="event-desc">{{ event.templateContent | safe }}</div>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="events-empty" hidden data-empty-note>Nothing on the calendar just yet — check back soon or follow us on social media!</p>
+
+  <div class="section-head" style="margin-top:3rem;" data-past-head hidden>
+    <h2 class="section-title">Past events</h2>
+  </div>
+  <ul class="event-list" data-cal-past></ul>
+
+</div>
+
+<script>
+  window.CH_EVENTS = {{ collections.events | eventsJson | safe }};
+</script>
+<script src="/assets/js/calendar.js"></script>

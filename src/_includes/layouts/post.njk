@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+---
+<div class="page-hero">
+  <div class="container">
+    <p class="post-meta">
+      <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+      <span class="hex-dot" aria-hidden="true"></span>
+      {{ author or site.author }}
+    </p>
+    <h1 class="page-title">{{ title }}</h1>
+  </div>
+</div>
+
+<article class="container prose section-pad">
+  {{ content | safe }}
+
+  <hr class="honey-rule">
+  <p class="back-link"><a href="/blog/">&larr; Back to all posts</a></p>
+</article>

@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+title: Patreon Creators
+description: The 3D designers Carey Harwoods, LLC supports on Patreon, Cults3D, and MyMiniFactory — whose models we're licensed to print and sell.
+---
+<div class="page-hero">
+  <div class="container">
+    <h1 class="page-title">Our Patreon Creators</h1>
+    <p class="page-subtitle">
+      The talented 3D designers we support — and whose models we're licensed to print and sell.
+    </p>
+  </div>
+</div>
+
+<div class="container section-pad">
+  <div class="prose">
+    <p>
+      Every 3D-printed piece we sell starts with a design, and behind every design is an
+      artist. We subscribe to these creators through Patreon and their Cults3D or
+      MyMiniFactory pages, which gives us a <strong>commercial license</strong> to print
+      and sell their work — so the designers get paid for every model we offer.
+    </p>
+  </div>
+
+  <div class="creator-grid">
+    {% for creator in patreons %}
+    <div class="creator-card">
+      <span class="creator-platform">{{ creator.platform }}</span>
+      <h3>{{ creator.name }}</h3>
+      <p>{{ creator.blurb }}</p>
+      {% if creator.url %}
+      <p style="margin-top:0.5rem;"><a class="creator-link" href="{{ creator.url }}" rel="noopener">Visit their page &rarr;</a></p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="prose" style="margin-top:2.5rem;">
+    <blockquote>
+      <p>
+        Found something online you'd love to have printed? Let us know! We don't mind
+        reaching out to a creator to see if we can get a license to print it for you.
+      </p>
+    </blockquote>
+    <p>
+      Message us on <a href="{{ site.social.facebook }}" rel="noopener">Facebook</a>,
+      <a href="{{ site.social.instagram }}" rel="noopener">Instagram</a>, or
+      <a href="{{ site.social.tiktok }}" rel="noopener">TikTok</a> with a link to the
+      model, and we'll take it from there.
+    </p>
+  </div>
+</div>

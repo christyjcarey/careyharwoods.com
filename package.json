@@ -1,0 +1,14 @@
+{
+  "name": "careyharwoods.com",
+  "version": "1.0.0",
+  "description": "Carey Harwoods, LLC — Fiber, Laser, and 3D Printing in Summerville, SC",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "preview": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

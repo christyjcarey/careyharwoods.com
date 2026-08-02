@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: News, event announcements, and behind-the-scenes updates from Carey Harwoods, LLC in Summerville, SC.
+---
+<div class="page-hero">
+  <div class="container">
+    <h1 class="page-title">News from the Hive</h1>
+    <p class="page-subtitle">Event announcements, new products, and behind-the-scenes buzz from the workshop.</p>
+  </div>
+</div>
+
+<div class="container section-pad">
+  <div class="post-list">
+    {% for post in collections.posts %}
+    <article class="post-card">
+      <p class="post-meta">
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        <span class="hex-dot" aria-hidden="true"></span>
+        {{ post.data.author or site.author }}
+      </p>
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p>{{ post.templateContent | excerpt }}</p>
+      <a class="read-more" href="{{ post.url }}">Read more &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</div>

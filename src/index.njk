@@ -1,0 +1,160 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker">Shop Small · Shop Local · Summerville, SC</p>
+      <h1>Fiber, Laser, and 3D&nbsp;Printing — with a little honey on the side.</h1>
+      <p class="hero-lede">
+        Carey Harwoods is a small, family-run craft shop making 3D-printed dragons and
+        figurines, laser-cut goods, fiber arts, and honey from our own backyard hives.
+        Find us at markets and festivals around the Lowcountry.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-honey" href="/calendar/">See where we'll bee next</a>
+        <a class="btn btn-outline" href="/about/">Meet the family</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <svg class="bee-path" viewBox="0 0 200 120" aria-hidden="true">
+        <path d="M8 100 C 50 20, 120 10, 150 45 S 185 95, 160 100"
+              fill="none" stroke="#E2741A" stroke-width="2" stroke-dasharray="1 8"
+              stroke-linecap="round" opacity="0.7"/>
+        <g transform="translate(152,96) rotate(20)">
+          <ellipse cx="0" cy="0" rx="9" ry="6.5" fill="#1F1B14"/>
+          <path d="M-8.5 0 a 8.5 6 0 0 1 4.2 -5.4 l 0 10.8 a 8.5 6 0 0 1 -4.2 -5.4 z" fill="#F6C25C"/>
+          <rect x="-1.5" y="-6.5" width="3.4" height="13" rx="1.7" fill="#F6C25C"/>
+          <ellipse cx="-2" cy="-8" rx="5.5" ry="3.4" fill="#FFFBF2" opacity="0.85" transform="rotate(-24 -2 -8)"/>
+          <ellipse cx="3" cy="-7" rx="4.5" ry="2.8" fill="#FFFBF2" opacity="0.7" transform="rotate(-12 3 -7)"/>
+        </g>
+      </svg>
+      <img src="/assets/img/logo-800.png" alt="Carey Harwoods circular logo: a 3D printer nozzle printing a honey-colored cube" width="320" height="320">
+    </div>
+  </div>
+</section>
+
+<section class="container section-pad">
+  <div class="section-head">
+    <h2 class="section-title">What we make</h2>
+  </div>
+  <div class="craft-grid">
+    <div class="craft-card">
+      <div class="craft-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 3h14l-2 5H7L5 3z"/><path d="M10 8v3l2 2 2-2V8"/><path d="M12 13v2"/>
+          <path d="M7 21l5-3 5 3v-4l-5-3-5 3v4z"/>
+        </svg>
+      </div>
+      <h3>3D Printing</h3>
+      <p>Articulated dragons, dragon eggs, figurines, and custom prints from licensed designs we support on Patreon.</p>
+    </div>
+    <div class="craft-card">
+      <div class="craft-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v7"/><path d="M12 10l-6 10"/><path d="M12 10l6 10"/>
+          <circle cx="12" cy="20" r="1.4"/><path d="M8 3h8"/>
+        </svg>
+      </div>
+      <h3>Laser Work</h3>
+      <p>Engraving and precision-cut pieces — signs, ornaments, and one-of-a-kind keepsakes cut with light.</p>
+    </div>
+    <div class="craft-card">
+      <div class="craft-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="10" cy="10" r="6"/>
+          <path d="M6 6c3 2 5 6 8 8"/><path d="M14 5c-2 3-6 5-8 8"/>
+          <path d="M15 14l6 7"/>
+        </svg>
+      </div>
+      <h3>Fiber Arts</h3>
+      <p>Handmade crochet, knitting, and fiber crafts — cozy, colorful, and made one stitch at a time.</p>
+    </div>
+    <div class="craft-card">
+      <div class="craft-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3l6 3.5v7L12 17l-6-3.5v-7L12 3z"/>
+          <path d="M12 17v4"/><path d="M9 21h6"/>
+        </svg>
+      </div>
+      <h3>Local Honey</h3>
+      <p>Raw honey from our backyard beehives in Summerville — small-batch, local, and straight from the comb.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container section-pad" id="upcoming">
+  <div class="section-head">
+    <h2 class="section-title">Where we'll bee next</h2>
+    <a class="section-more" href="/calendar/">Full calendar &rarr;</a>
+  </div>
+  <ul class="event-list" data-upcoming-limit="3">
+    {% for event in collections.events %}
+    <li class="event-card" data-date="{{ event.data.endDate | default(event.date) | isoDate }}">
+      <div class="event-date" aria-hidden="true">
+        <span class="event-month">{{ event.date | monthAbbr }}</span>
+        <span class="event-day">{{ event.date | dayOfMonth }}</span>
+      </div>
+      <div class="event-body">
+        <h3>{{ event.data.title }}{% if event.data.status == "tentative" %}<span class="event-chip tentative">Date TBC</span>{% endif %}</h3>
+        <p class="event-meta">
+          <time datetime="{{ event.date | isoDate }}">{{ event.date | shortDate }}</time>{% if event.data.time %} · {{ event.data.time }}{% endif %}{% if event.data.location %} · {{ event.data.location }}{% endif %}
+        </p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="events-empty" hidden data-empty-note>No events on the calendar right now — follow us on social media for pop-up announcements!</p>
+</section>
+
+<section class="container section-pad">
+  <div class="section-head">
+    <h2 class="section-title">News from the hive</h2>
+    <a class="section-more" href="/blog/">All posts &rarr;</a>
+  </div>
+  <div class="post-grid">
+    {% for post in collections.posts | limit(3) %}
+    <article class="post-card">
+      <p class="post-meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p>{{ post.templateContent | excerpt }}</p>
+      <a class="read-more" href="{{ post.url }}">Read more &rarr;</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="callout-band">
+  <div class="container">
+    <h2>See something you'd like printed?</h2>
+    <p>
+      We subscribe to a hive of talented 3D designers and can print their models for you —
+      dragons, fidgets, figurines, and more. Check who we currently support, or reach out
+      and we'll see if we can license it.
+    </p>
+    <p style="margin-top:1.5rem;"><a class="btn btn-honey" href="/patreon/">Our Patreon creators</a></p>
+  </div>
+</section>
+
+<script>
+  // Hide events that have already passed; show up to 3 upcoming.
+  (function () {
+    var list = document.querySelector("[data-upcoming-limit]");
+    if (!list) return;
+    var limit = parseInt(list.getAttribute("data-upcoming-limit"), 10) || 3;
+    var today = new Date().toISOString().slice(0, 10);
+    var shown = 0;
+    list.querySelectorAll(".event-card").forEach(function (card) {
+      var d = card.getAttribute("data-date");
+      if (d < today || shown >= limit) {
+        card.hidden = true;
+      } else {
+        shown++;
+      }
+    });
+    if (shown === 0) {
+      var note = document.querySelector("[data-empty-note]");
+      if (note) note.hidden = false;
+    }
+  })();
+</script>
