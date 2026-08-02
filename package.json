@@ -6,9 +6,11 @@
   "scripts": {
     "start": "eleventy --serve",
     "preview": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy && npm run minify:css",
+    "minify:css": "cleancss -O2 --batch --batch-suffix \"\" \"_site/assets/css/*.css\""
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "clean-css-cli": "^5.6.3"
   }
 }
