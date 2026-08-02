@@ -6,7 +6,7 @@ description: Carey Harwoods, LLC is a small family-owned hobby and crafting busi
 permalink: /about/
 ---
 Carey Harwoods, LLC is a small, family-owned hobby and crafting business based out of
-**Summerville, South Carolina**. The shop is run by Christy, with plenty of help from
+**Summerville, South Carolina**. The shop is run by Christy, with just a little help from
 her husband Cody and their kids — a true family operation.
 
 What started as a hobby in 2019 grew into a full-fledged small business in 2022, and
