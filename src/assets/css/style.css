@@ -377,6 +377,13 @@ a:hover { color: var(--link-hover); }
   border-radius: 0 8px 8px 0;
   font-style: italic;
 }
+.event-invite blockquote {
+  margin: 1.5em 0em 0em; padding: 0.6em 1.2em;
+  border-left: 4px solid var(--honey-400);
+  background: var(--honey-100);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
 .honey-rule {
   border: none; height: 3px; margin: 2.5rem 0 1.5rem;
   background: linear-gradient(90deg, var(--honey-300), var(--amber-700), transparent);
