@@ -6,11 +6,11 @@
   <title>{% if title %}{{ title }} · {{ site.shortName }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo-180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo-180.webp">
   <link rel="alternate" type="application/rss+xml" title="{{ site.shortName }} — News &amp; Events" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css">
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}">
@@ -23,7 +23,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="{{ site.name }} — home">
-        <img class="brand-logo" src="/assets/img/logo-180.png" alt="" width="44" height="44">
+        <img fetchpriority="high" class="brand-logo" src="/assets/img/logo-180.webp" alt="" width="44" height="44">
         <span class="brand-text">
           <span class="brand-name">Carey Harwoods</span>
           <span class="brand-tag">Fiber · Laser · 3D Printing</span>
@@ -52,7 +52,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="/assets/img/logo-180.png" alt="" width="72" height="72" loading="lazy">
+        <img src="/assets/img/logo-180.webp" alt="" width="72" height="72" loading="lazy">
         <p class="footer-motto">Shop Small <span class="hex-dot" aria-hidden="true"></span> Shop Local<br>
         Female Combat Veteran Owned</p>
         <p class="footer-loc">Handmade in {{ site.location }} since {{ site.established }}</p>
