@@ -26,12 +26,11 @@ we've been making (and beekeeping) ever since.
 
 We set up our booth at craft fairs and festivals all around the Lowcountry, including:
 
-- **Summerville Third Thursday** — downtown Summerville, most months
-- **Flowertown Festival** — Azalea Park, Summerville
+- **Summerville Third Thursday** — downtown Summerville, every month
+- **Flowertown Festival** — Azalea Park and the [Diocese of the Southeast](http://rec-dse.org/), Summerville
 - **Sweet Tea Festival** — downtown Summerville
-- **Italian Festival** — Charleston area
-- Plus local markets at **Knightsville General Store**, **Jedburg Junction**, and other
-  pop-ups around town
+- **Italian Festival** — downtown Summerville
+- Plus local markets and other pop-ups around town
 
 Check the [calendar](/calendar/) for exact dates, or follow us on
 [Facebook](https://www.facebook.com/CareyHarwoods),
