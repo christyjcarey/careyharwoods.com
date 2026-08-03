@@ -4,6 +4,31 @@
    charcoal ink, with honeycomb/hexagon motifs throughout.
    ========================================================================== */
 
+/* ---- Self-hosted fonts (variable woff2, latin subset) -------------------
+   Served from our own domain instead of fonts.googleapis.com so visitors
+   don't pay for extra DNS/TLS connections. Files live in /assets/fonts/. */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat-500-800.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/assets/fonts/lora-400-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("/assets/fonts/lora-italic-400-500.woff2") format("woff2");
+}
+
 :root {
   /* Honey ambers (sampled from the logo cube) */
   --honey-100: #FDF3DC;
